@@ -1,18 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
+
+<h1>Single User Post</h1>
+
 <br><br><br>
-    {% if blogs|length == 0 %}
-    <p style="padding: 15px 35px; float: left;">No blogs yet</p>
-    {% else %}
+        {% if blogs|length == 0 %}
+        <p style="padding: 15px 35px; float: left;">No blogs yet</p>
+        {% else %}
+
             {% for blog in blogs %}                        
             <h2> <a href="{{ './blog?id=%s'%blog.id }}">{{blog.title}}</a> </h2>
             <p >{{blog.body}}</p>
             <h5 id="author">Written by <a href="/?username={{blog.owner.username}}">{{blog.owner.username}}</a> </h5>            
             <br>
             {% endfor %}
-    {% endif %}
-        
-    
+
+
+        {% endif %}
+
 </body>
 </html>
+
+
 {% endblock %}

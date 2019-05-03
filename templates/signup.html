@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Signup</h2>
+<form action="/signup" method="post">
+  <p><label>Username <input type="text" name="username" value='{{username}}'/></label>
+    <p class="error">{{username_error}}</p>
+  </p>
+  <p><label>Password <input type="password" name="password" value='{{password}}'/></label>
+    <p class="error">{{password_error}}</p>
+  </p>
+  <p><label>Verify Password <input type="password" name="verify" value='{{password2}}'/></label>
+    <p class="error">{{verify_error}}</p>
+  </p>
+  <p><input type="submit" value="Register"/></p>
+</form>
+
+<style>
+    h2, p {
+      padding: 5px 15px 5px 5px;
+      margin-left: 60px;
+    }
+</style> 
+
+{% endblock %}

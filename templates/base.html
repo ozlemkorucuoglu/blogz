@@ -1,17 +1,41 @@
 <!doctype html>
 <html>
     <head>
-        <title><center>{{title}}</center></title> 
+        <title>Blogz</title>
+        <style type="text/css">
+            .error {
+                color: red;
+            }
+            #author { 
+            font-family: cursive;
+            font-size: 12px;
+            }
+        </style>
+        
     </head>
+    <body>
+        <nav style="margin-left:60px; margin-right:60px;">
+            <a href="/" style="padding: 25px 5px; float: left;">Home</a>
+            <a href="/blog" style="padding: 25px 5px; float: left">All Posts</a> 
+            <a href="/new_post" style="padding: 25px 5px; float: left">New Post</a> 
+            <a href="/logout" style="padding: 25px 5px; float: right;">Logout</a>
+            <a href="/login" style="padding: 25px 5px; float: right;">Login</a>
+        </nav>
+    <br><br><br>
 
-    <nav>
-        <a href="blog">Main Blog Page</a> 
-        <a href="new_post">Add a Blog Entry</a> 
-    </nav>
-<body>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class=flashes>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    {% endwith %}
 
     {% block content %}
     {% endblock %}
 
-</body>
+    </body>
 </html>
+

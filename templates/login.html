@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <h2>Login</h2>
+  <form action="/login" method="post">
+    <p><label>Username <input type="text" name="username"/></label></p>
+    <p><label>Password <input type="password" name="password"/></label></p>
+    <p><input type="submit" value="Submit Query"/></p>
+    <p>Don't have an account?
+    <a href="signup">Create one!</a></p> 
+  </form>
+
+  <style>
+      h2, p {
+        padding: 5px 15px 5px 5px;
+        margin-left: 60px;
+      }
+  </style> 
+
+{% endblock %}
+
